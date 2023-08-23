@@ -78,13 +78,13 @@ const Dashboard = () => {
           <div>
           
           <IconButton aria-label="add to favorites">
-              <FavoriteIcon sx={{color:"palevioletred"}} />
+              <FavoriteIcon sx={{color:"palevioletred"}} /> {a?.likes}
             </IconButton>
             <IconButton aria-label="share">
-              <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} />
+              <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} />  {a?.comments.length} 
             </IconButton>
             <IconButton aria-label="share">
-              <VisibilityIcon sx={{color:"palevioletred"}}  /> 
+              <VisibilityIcon sx={{color:"palevioletred"}}  />  {a?.post_views}
             </IconButton>
             </div>
             

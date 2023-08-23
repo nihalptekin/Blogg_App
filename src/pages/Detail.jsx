@@ -96,7 +96,7 @@ const Detail = () => {
           </IconButton>
 
           <IconButton aria-label="share" onClick={handleCommentClick}>
-            <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} />
+            <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} />  {detailData?.comments.length} 
           </IconButton>
 
           <IconButton aria-label="share">
