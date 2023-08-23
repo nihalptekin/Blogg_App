@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
 import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
 import logo from "../assest/logo.png";
-import { CardMedia, Grid } from "@mui/material";
+import { CardMedia } from "@mui/material";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
