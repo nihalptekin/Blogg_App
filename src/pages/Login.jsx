@@ -25,8 +25,9 @@ const Login = () => {
               height: "100vh",
               p: 2,
             }}
+            marginTop={30}
           >
-            <Grid item xs={12} sm={10} md={6}>
+            <Grid item xs={12} sm={10} md={6} >
               <Avatar
                 sx={{
                   backgroundColor: "secondary.light",

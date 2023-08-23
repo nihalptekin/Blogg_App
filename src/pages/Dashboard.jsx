@@ -82,7 +82,7 @@ const Dashboard = () => {
           </CardContent>
 
           <Typography sx={{display:"flex", marginLeft:1, marginTop:2 }} >
-          <AccountCircleIcon sx={{background:"white", color:"orange", }}/> {a.author}
+          <AccountCircleIcon sx={{background:"white", color:"orange", marginRight:"1px" }}/> {a.author}
           </Typography>
           
           <CardActions sx={{justifyContent:"space-between", alignItems:"center" }}>
