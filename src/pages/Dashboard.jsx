@@ -56,7 +56,7 @@ const Dashboard = () => {
       {data.map(a=>(
     <Card key={a.id} sx={{width: 350, 
       p: 4,
-      height: 400,
+      height: 450,
       display: "flex",
       flexDirection: "column",
       justifyContent:"center",
@@ -65,12 +65,12 @@ const Dashboard = () => {
     
         }}>
           <CardMedia
-            sx={{ height: 200 }}
+            sx={{ height: 250 }}
             image={a.image}
             title="card image"
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {a.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
@@ -93,7 +93,7 @@ const Dashboard = () => {
               <FavoriteIcon sx={{color:"palevioletred"}} /> {a?.likes}
             </IconButton>
             <IconButton aria-label="share">
-              <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} />  {a?.comments.length} 
+              <ChatBubbleOutlineIcon sx={{color:"palevioletred"}} /> {a?.comments.length} 
             </IconButton>
             <IconButton aria-label="share">
               <VisibilityIcon sx={{color:"palevioletred"}}  />  {a?.post_views}
@@ -102,7 +102,7 @@ const Dashboard = () => {
             
          <div>
          <Button size="small" 
-            sx={{background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', color:"white", height:"50px", width:"150px",  }}
+            sx={{background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', color:"white", height:"40px", width:"125px",  }}
              variant='contained'  
             onClick={(login) ? () => navigate("/detail/" + a.id) 
              : logineGit}> Read More </Button>
