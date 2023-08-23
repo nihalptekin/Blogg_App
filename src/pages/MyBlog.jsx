@@ -19,7 +19,7 @@ const MyBlog = () => {
   // const { info, setInfo } = location.state || {};
 
   useEffect(() => {
-    getUserBlogData();
+    getUserBlogData()
   }, []);
 
   const flexCenter = {
@@ -52,7 +52,7 @@ const MyBlog = () => {
               {a.title}
             </Typography>
             <Typography gutterBottom variant="p" component="div">
-              {a.content.slice(0, 100)}...
+              {a.content.slice(0, 150)}...
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {a.publish_date}
