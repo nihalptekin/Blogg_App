@@ -14,7 +14,6 @@ import MenuItem from "@mui/material/MenuItem";
 import {useNavigate } from "react-router-dom";
 import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
-
 import logo from "../assest/logo.png";
 import { CardMedia } from "@mui/material";
 
@@ -72,7 +71,7 @@ function Navbar() {
   const typographyStyle = {
     mr: 1,
     display: { xs: "none", md: "flex" },
-    fontFamily: "monospace",
+    fontFamily: "'Fira Mono', monospace",
     fontWeight: 600,
     fontSize: 25,
     letterSpacing: ".2rem",
@@ -84,6 +83,9 @@ function Navbar() {
       color: "purple",}
     
   };
+//   <style>
+// @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=PT+Serif&display=swap');
+// </style>
 
   return (
     <div>
