@@ -11,11 +11,11 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useAuthCalls from "../hooks/useAuthCalls";
 import { useSelector } from "react-redux";
 import logo from "../assest/logo.png";
-import { CardMedia } from "@mui/material";
+import { CardMedia, Grid } from "@mui/material";
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -48,7 +48,6 @@ function Navbar() {
     navigate("/register");
   };
 
-
   const handleMyBlogClick = () => {
     navigate("/my-blogs");
   };
@@ -64,8 +63,7 @@ function Navbar() {
   const navbarStyle = {
     backgroundColor: "#b388ff",
     height: 100,
-    marginBottom:5,
-
+    marginBottom: 5,
   };
 
   const typographyStyle = {
@@ -78,40 +76,16 @@ function Navbar() {
     textDecoration: "none",
     textTransform: "capitalize",
     mb: 5,
-    "&:hover": 
-    {
-      color: "purple",}
-    
+    "&:hover": {
+      color: "purple",
+    },
   };
 
   return (
     <div>
       <AppBar position="static" sx={navbarStyle}>
-        <Container  maxWidth="xl">
-          <Toolbar disableGutters sx={{ marginTop:2}}>
-            <CardMedia
-              image={logo}
-              style={{
-                width: 70,
-                height: 70,
-                borderRadius: 80,
-                marginTop: -45,           
-              }}
-              sx={{
-    '@media (max-width: 900px)': {
-      display: 'none',  // Ekran küçültüldüğünde gizle
-    },
-  }}
-              
-            />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
-              sx={typographyStyle}
-            ></Typography>
-
+        <Container maxWidth="xl" >
+          <Toolbar disableGutters sx={{ marginTop: 2 }}>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -142,16 +116,17 @@ function Navbar() {
                   display: { xs: "block", md: "none" },
                 }}
               >
-                <MenuItem onClick={()=>navigate("/")}>
-                  <Typography
-                    textAlign="center"
-                    // onClick={}
-                  >
-                    DASHBOARD
-                  </Typography>
+                <MenuItem onClick={() => navigate("/")}>
+                  <Typography textAlign="center">DASHBOARD</Typography>
                 </MenuItem>
 
-                <MenuItem onClick={ currentUser ? () => navigate("/new-blog") : ()=>navigate("/login")}>
+                <MenuItem
+                  onClick={
+                    currentUser
+                      ? () => navigate("/new-blog")
+                      : () => navigate("/login")
+                  }
+                >
                   <Typography textAlign="center">NEWBLOG</Typography>
                 </MenuItem>
 
@@ -160,7 +135,7 @@ function Navbar() {
                 </MenuItem>
               </Menu>
             </Box>
-            
+
             <Typography
               variant="h5"
               noWrap
@@ -170,7 +145,7 @@ function Navbar() {
                 mr: 2,
                 display: { xs: "flex", md: "none" },
                 flexGrow: 1,
-                fontFamily: "monospace",
+                fontFamily: "'Righteous', cursive",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
                 color: "inherit",
@@ -180,46 +155,64 @@ function Navbar() {
               BLOGGER
             </Typography>
 
-            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Button onClick={()=>navigate("/")} sx={typographyStyle}
-   >
-                Dashboard
-              </Button>
 
-              <Button
-                onClick={ currentUser ? () => navigate("/new-blog") : ()=>navigate("/login")}
-                sx={typographyStyle}
-              >
-                NewBlog
-              </Button>
-              <Button onClick={() => navigate("/about")} sx={typographyStyle}>
-                About
-              </Button>
-            </Box>
+          
+              <Box sx={{ flexGrow: 1,  display: { xs: "none", md: "flex" } }} >
+                <CardMedia
+                  image={logo}
+                  style={{
+                    width: 70,
+                    height: 70,
+                    borderRadius: 80,
+                  }}
+                  sx={{
+                    "@media (max-width: 900px)": {
+                      display: "none", // Ekran küçültüldüğünde gizle
+                    },
+                  }}
+                />
+                <Button onClick={() => navigate("/")} sx={typographyStyle}>
+                  Dashboard
+                </Button>
 
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Open settings">
-
-                <IconButton sx={{marginTop:-4}} onClick={handleOpenUserMenu} >
-                  <Avatar
-                    alt=""
-                    src={
-                      currentUser
-                        ? currentUser.image
-                        : "/static/images/avatar/2.jpg"
-                    }
-                    sx={{
-                      width: 60,
-                      height: 60,
-                      backgroundColor: "white",
-                      color: "orange",
-                      
-                    }}
-                  />
-                </IconButton>
-              </Tooltip>
+                <Button
+                  onClick={
+                    currentUser
+                      ? () => navigate("/new-blog")
+                      : () => navigate("/login")
+                  }
+                  sx={typographyStyle}
+                >
+                  NewBlog
+                </Button>
+                <Button onClick={() => navigate("/about")} sx={typographyStyle}>
+                  About
+                </Button>
+              </Box>
+    
+         
+            <Box sx={{flexGrow: 0}}>
+            <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar
+                      alt=""
+                      src={
+                        currentUser
+                          ? currentUser.image
+                          : "/static/images/avatar/2.jpg"
+                      }
+                      sx={{
+                        width: 60,
+                        height: 60,
+                        backgroundColor: "white",
+                        color: "orange",
+                        marginTop:-4
+                      }}
+                    />
+                  </IconButton>
+                </Tooltip>
               <Menu
-                sx={{ mt: "45px" }}
+                sx={{ mt: "70px" }}
                 id="menu-appbar"
                 anchorEl={anchorElUser}
                 anchorOrigin={{
