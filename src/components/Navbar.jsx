@@ -71,21 +71,18 @@ function Navbar() {
   const typographyStyle = {
     mr: 1,
     display: { xs: "none", md: "flex" },
-    fontFamily: "'Fira Mono', monospace",
-    fontWeight: 600,
+    fontFamily: "'Righteous', cursive",
     fontSize: 25,
     letterSpacing: ".2rem",
     color: "inherit",
     textDecoration: "none",
+    textTransform: "capitalize",
     mb: 5,
     "&:hover": 
     {
       color: "purple",}
     
   };
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=PT+Serif&display=swap');
-</style>
 
   return (
     <div>
@@ -186,17 +183,17 @@ function Navbar() {
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               <Button onClick={()=>navigate("/")} sx={typographyStyle}
    >
-                DASHBOARD
+                Dashboard
               </Button>
 
               <Button
                 onClick={ currentUser ? () => navigate("/new-blog") : ()=>navigate("/login")}
                 sx={typographyStyle}
               >
-                NEWBLOG
+                NewBlog
               </Button>
               <Button onClick={() => navigate("/about")} sx={typographyStyle}>
-                ABOUT
+                About
               </Button>
             </Box>
 
