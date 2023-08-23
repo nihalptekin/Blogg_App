@@ -70,15 +70,19 @@ function Navbar() {
   };
 
   const typographyStyle = {
-    mr: 2,
+    mr: 1,
     display: { xs: "none", md: "flex" },
     fontFamily: "monospace",
     fontWeight: 600,
     fontSize: 25,
-    letterSpacing: ".3rem",
+    letterSpacing: ".2rem",
     color: "inherit",
     textDecoration: "none",
     mb: 5,
+    "&:hover": 
+    {
+      color: "purple",}
+    
   };
 
   return (
@@ -92,8 +96,7 @@ function Navbar() {
                 width: 70,
                 height: 70,
                 borderRadius: 80,
-                marginTop: -45,
-            
+                marginTop: -45,           
               }}
               sx={{
     '@media (max-width: 900px)': {
@@ -179,7 +182,8 @@ function Navbar() {
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-              <Button onClick={()=>navigate("/")} sx={typographyStyle}>
+              <Button onClick={()=>navigate("/")} sx={typographyStyle}
+   >
                 DASHBOARD
               </Button>
 
@@ -187,7 +191,7 @@ function Navbar() {
                 onClick={ currentUser ? () => navigate("/new-blog") : ()=>navigate("/login")}
                 sx={typographyStyle}
               >
-                NEW BLOG
+                NEWBLOG
               </Button>
               <Button onClick={() => navigate("/about")} sx={typographyStyle}>
                 ABOUT
