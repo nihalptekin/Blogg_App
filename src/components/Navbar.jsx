@@ -255,14 +255,15 @@ function Navbar() {
                         Logout
                       </Typography>
                     </MenuItem>
-                  </>
-                ) : (
-                  <>
                     <MenuItem onClick={handleCloseUserMenu}>
                       <Typography textAlign="center" onClick={handleLoginClick}>
                         Login
                       </Typography>
                     </MenuItem>
+                  </>
+                ) : (
+                  <>
+                 
 
                     <MenuItem>
                       <Typography
