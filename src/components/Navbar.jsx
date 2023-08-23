@@ -83,9 +83,9 @@ function Navbar() {
       color: "purple",}
     
   };
-//   <style>
-// @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=PT+Serif&display=swap');
-// </style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@700&family=PT+Serif&display=swap');
+</style>
 
   return (
     <div>
