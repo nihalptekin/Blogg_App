@@ -72,7 +72,7 @@ function Navbar() {
     mr: 1,
     display: { xs: "none", md: "flex" },
     fontFamily: "'Righteous', cursive",
-    fontSize: 25,
+    fontSize: 30,
     letterSpacing: ".2rem",
     color: "inherit",
     textDecoration: "none",
@@ -88,7 +88,7 @@ function Navbar() {
     <div>
       <AppBar position="static" sx={navbarStyle}>
         <Container  maxWidth="xl">
-          <Toolbar disableGutters sx={{ marginTop:3}}>
+          <Toolbar disableGutters sx={{ marginTop:2}}>
             <CardMedia
               image={logo}
               style={{
