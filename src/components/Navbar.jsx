@@ -84,7 +84,7 @@ function Navbar() {
   return (
     <div>
       <AppBar position="static" sx={navbarStyle}>
-        <Container maxWidth="xl" >
+        <Container maxWidth="xl">
           <Toolbar disableGutters sx={{ marginTop: 2 }}>
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
@@ -155,62 +155,59 @@ function Navbar() {
               BLOGGER
             </Typography>
 
+            <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+              <CardMedia
+                image={logo}
+                style={{
+                  width: 70,
+                  height: 70,
+                  borderRadius: 80,
+                }}
+                sx={{
+                  "@media (max-width: 900px)": {
+                    display: "none", // Ekran küçültüldüğünde gizle
+                  },
+                }}
+              />
+              <Button onClick={() => navigate("/")} sx={typographyStyle}>
+                Dashboard
+              </Button>
 
-          
-              <Box sx={{ flexGrow: 1,  display: { xs: "none", md: "flex" } }} >
-                <CardMedia
-                  image={logo}
-                  style={{
-                    width: 70,
-                    height: 70,
-                    borderRadius: 80,
-                  }}
-                  sx={{
-                    "@media (max-width: 900px)": {
-                      display: "none", // Ekran küçültüldüğünde gizle
-                    },
-                  }}
-                />
-                <Button onClick={() => navigate("/")} sx={typographyStyle}>
-                  Dashboard
-                </Button>
+              <Button
+                onClick={
+                  currentUser
+                    ? () => navigate("/new-blog")
+                    : () => navigate("/login")
+                }
+                sx={typographyStyle}
+              >
+                NewBlog
+              </Button>
+              <Button onClick={() => navigate("/about")} sx={typographyStyle}>
+                About
+              </Button>
+            </Box>
 
-                <Button
-                  onClick={
-                    currentUser
-                      ? () => navigate("/new-blog")
-                      : () => navigate("/login")
-                  }
-                  sx={typographyStyle}
-                >
-                  NewBlog
-                </Button>
-                <Button onClick={() => navigate("/about")} sx={typographyStyle}>
-                  About
-                </Button>
-              </Box>
-    
-         
-            <Box sx={{flexGrow: 0}}>
-            <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar
-                      alt=""
-                      src={
-                        currentUser
-                          ? currentUser.image
-                          : "/static/images/avatar/2.jpg"
-                      }
-                      sx={{
-                        width: 60,
-                        height: 60,
-                        backgroundColor: "white",
-                        color: "orange",
-                        marginTop:-4
-                      }}
-                    />
-                  </IconButton>
-                </Tooltip>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar
+                    alt=""
+                    src={
+                      currentUser
+                        ? currentUser.image
+                        : "/static/images/avatar/2.jpg"
+                    }
+                    sx={{
+                      width: 60,
+                      height: 60,
+                      backgroundColor: "white",
+                      color: "orange",
+                      marginTop: -4,
+                    }}
+                  />
+                </IconButton>
+              </Tooltip>
               <Menu
                 sx={{ mt: "70px" }}
                 id="menu-appbar"
@@ -255,16 +252,14 @@ function Navbar() {
                         Logout
                       </Typography>
                     </MenuItem>
+                  </>
+                ) : (
+                  <>
                     <MenuItem onClick={handleCloseUserMenu}>
                       <Typography textAlign="center" onClick={handleLoginClick}>
                         Login
                       </Typography>
                     </MenuItem>
-                  </>
-                ) : (
-                  <>
-                 
-
                     <MenuItem>
                       <Typography
                         textAlign="center"
