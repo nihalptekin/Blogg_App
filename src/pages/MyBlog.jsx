@@ -48,11 +48,11 @@ const MyBlog = () => {
      }} key={a.id}>
           <CardMedia sx={{ height: 400, objectFit: "contain" }} image={a.image} title={a.image} />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
+            <Typography gutterBottom variant="h6" component="div">
               {a.title}
             </Typography>
             <Typography gutterBottom variant="p" component="div">
-              {a.content.slice(0, 150)}...
+              {a.content.slice(0, 100)}...
             </Typography>
             <Typography variant="body2" color="text.secondary">
             {new Date(a.publish_date).toLocaleDateString()}
