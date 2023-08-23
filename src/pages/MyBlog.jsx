@@ -46,7 +46,7 @@ const MyBlog = () => {
       border:"3px solid orange",
   
      }} key={a.id}>
-          <CardMedia sx={{ height: 340, objectFit: "contain" }} image={a.image} title={a.image} />
+          <CardMedia sx={{ height: 400, objectFit: "contain" }} image={a.image} title={a.image} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {a.title}
@@ -55,23 +55,25 @@ const MyBlog = () => {
               {a.content.slice(0, 150)}...
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {a.publish_date}
+            {new Date(a.publish_date).toLocaleDateString()}
             </Typography>
           </CardContent>
 
-          <CardActions sx={{ }}>
-   
-           <AccountCircleIcon sx={{background:"white", color:"orange", }}/> {a.author}
+          <Typography sx={{display:"flex" }} >
+          <AccountCircleIcon sx={{background:"white", color:"orange", }}/> {a.author}
+          </Typography>
+          <CardActions>
+  
             <IconButton sx={{color:"palevioletred"}}  aria-label="add to favorites">
-            <FavoriteIcon  />
+            <FavoriteIcon />   {a?.likes}
             </IconButton>
 
             <IconButton aria-label="share">
-            <ChatBubbleOutlineIcon sx={{color:"palevioletred", display:"flex", flexDirection:"column"}}/>
+            <ChatBubbleOutlineIcon sx={{color:"palevioletred", display:"flex", flexDirection:"column"}}/> {a?.comments.length} 
             </IconButton>
 
             <IconButton aria-label="share">
-            <VisibilityIcon sx={{color:"palevioletred"}} /> 
+            <VisibilityIcon sx={{color:"palevioletred"}} /> {a?.post_views}
             </IconButton>
 
             <Button size="small" sx={{background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', 

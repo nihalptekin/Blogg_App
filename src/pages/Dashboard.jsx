@@ -15,11 +15,14 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuthCalls from '../hooks/useAuthCalls';
 import { toastWarnNotify } from "../helper/ToastNotify";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Avatar from "@mui/material/Avatar";
 
 
 const Dashboard = () => {
   const { getBlogData } = useBlogsCalls();
   const { data } = useSelector(state => state.blog);
+  const { currentUser } = useSelector((state) => state.auth);
   const navigate=useNavigate();
   // const [visibilityCount, setVisibilityCount ]=useState(0)
   const { login } = useAuthCalls();
@@ -53,7 +56,7 @@ const Dashboard = () => {
       {data.map(a=>(
     <Card key={a.id} sx={{width: 350, 
       p: 4,
-      height: "400px",
+      height: 400,
       display: "flex",
       flexDirection: "column",
       justifyContent:"center",
@@ -73,9 +76,18 @@ const Dashboard = () => {
             <Typography variant="body2" color="text.secondary">
               {a.content.slice(0, 100)}...
             </Typography>
+            <Typography variant="body2"  marginTop={2}>
+            {new Date(a.publish_date).toLocaleDateString()}
+            </Typography>
           </CardContent>
-          <CardActions sx={{marginTop:5,justifyContent:"space-between" }}>
-          <div>
+
+          <Typography sx={{display:"flex", marginLeft:1, marginTop:2 }} >
+          <AccountCircleIcon sx={{background:"white", color:"orange", }}/> {a.author}
+          </Typography>
+          
+          <CardActions sx={{justifyContent:"space-between", alignItems:"center" }}>
+
+          <div >
           
           <IconButton aria-label="add to favorites">
               <FavoriteIcon sx={{color:"palevioletred"}} /> {a?.likes}
