@@ -9,16 +9,13 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 import CommentForm from "../components/blog/CommentForm";
 import { Button } from "@mui/material";
 import { useSelector } from "react-redux";
 import useBlogsCalls from "../hooks/useBlogsCalls";
 import UpdateModal from "../components/blog/UpdateModal";
 import useAxios from '../hooks/useAxios';
-
-
-
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -29,7 +26,7 @@ const Detail = () => {
 
 
   const {id}=useParams()
-  // console.log(id);
+
 
 
   const getDetailData = async (id) => {

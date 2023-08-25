@@ -13,7 +13,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import useAuthCalls from '../hooks/useAuthCalls';
 import { toastWarnNotify } from "../helper/ToastNotify";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
