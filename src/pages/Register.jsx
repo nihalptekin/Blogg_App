@@ -5,7 +5,7 @@ import LockIcon from "@mui/icons-material/Lock";
 import { Formik } from "formik";
 import Grid from "@mui/material/Grid";
 import RegisterForm, { registerSchema } from "../components/auth/RegisterForm";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Box, CardMedia } from "@mui/material";
 import people from "../assest/people.jpg"
 
@@ -14,6 +14,7 @@ import useAuthCall from "../hooks/useAuthCalls";
 
 const Register = () => {
   const { register } = useAuthCall();
+  const navigate=useNavigate()
 
  
 
@@ -66,8 +67,10 @@ const Register = () => {
           component={(props) => <RegisterForm {...props} />}
         />
         <Box sx={{ textAlign: "center", mt: 2 }}>
-          <Link to="/login">Do you have an account?</Link>
-        </Box>
+                <Typography>
+                  Do you not have an account? <Link to="/login">Login</Link>{" "}
+                </Typography>
+              </Box>
       </Grid>
     </Grid>
   </Container>
