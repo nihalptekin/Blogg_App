@@ -21,7 +21,6 @@ import useAxios from '../hooks/useAxios';
 
 
 const Detail = () => {
-  const location = useLocation();
   const navigate = useNavigate();
   const [comment, setComment] = useState(false);
   const { currentUser } = useSelector((state) => state.auth);
@@ -70,6 +69,8 @@ const Detail = () => {
     setComment(!comment);
   };
 
+  console.log('USER:', currentUser.username);
+  console.log('aUTHOR:', detailData.author);
 
   return (
     <div>
@@ -103,7 +104,7 @@ const Detail = () => {
             <VisibilityIcon sx={{color:"palevioletred"}} /> {detailData?.post_views}
           </IconButton>
         </CardActions>
-        {currentUser && (
+        { (detailData.author === currentUser.username) && (
           <Grid sx={{display:"flex", justifyContent:"center"}} >
             <Button variant="contained" 
              sx={{background:'darkorange', color:"white", height:"50px", width:"300px", marginLeft:"20px" }}

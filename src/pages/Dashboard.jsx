@@ -16,7 +16,7 @@ import { useNavigate } from 'react-router-dom';
 import useAuthCalls from '../hooks/useAuthCalls';
 import { toastWarnNotify } from "../helper/ToastNotify";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Avatar from "@mui/material/Avatar";
+
 
 
 const Dashboard = () => {
@@ -24,22 +24,19 @@ const Dashboard = () => {
   const { data } = useSelector(state => state.blog);
   const { currentUser } = useSelector((state) => state.auth);
   const navigate=useNavigate();
-  // const [visibilityCount, setVisibilityCount ]=useState(0)
-  const { login } = useAuthCalls();
+ 
+
 
   useEffect(() => {
      getBlogData()
-  
   }, []);
 
   
 
   const logineGit=()=>{
-     
       navigate("/login");
       toastWarnNotify("You must be logged in!");
-      
-  
+
   }
 
   const flexCenter = {
@@ -104,8 +101,8 @@ const Dashboard = () => {
          <Button size="small" 
             sx={{background:'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)', color:"white", height:"40px", width:"125px",  }}
              variant='contained'  
-            onClick={(login) ? () => navigate("/detail/" + a.id) 
-             : logineGit}> Read More </Button>
+            onClick={currentUser ? ()=> navigate("/detail/" + a.id) 
+             : logineGit }> Read More </Button>
            </div>          
           </CardActions>
         </Card>
